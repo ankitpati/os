@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # fileops.sh
 # Date  : 04 February 2016

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # hello.sh
 # Date  : 28 January 2016

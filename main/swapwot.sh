@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # swapwot.sh
 # Date  : 03 March 2016
@@ -16,9 +16,9 @@ echo "Before swap:"
 echo "num1 == $num1"
 echo "num2 == $num2"
 
-num1="`bc -l <<< \"$num1+$num2\"`"
-num2="`bc -l <<< \"$num1-$num2\"`"
-num1="`bc -l <<< \"$num1-$num2\"`"
+num1="`echo \"$num1+$num2\" | bc -l`"
+num2="`echo \"$num1-$num2\" | bc -l`"
+num1="`echo \"$num1-$num2\" | bc -l`"
 
 echo
 

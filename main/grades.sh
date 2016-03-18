@@ -4,7 +4,6 @@
 # Date  : 10 March 2016
 # Author: Ankit Pati
 
-
 echo "Marks out of 100? (-1) to terminate."
 
 marks="0"
@@ -38,6 +37,7 @@ do
     if [ "$marks" -gt "-1" ]
     then
         echo "Grade is $grade"
+        echo
     fi
 done
 
@@ -48,14 +48,19 @@ done
 Marks out of 100? (-1) to terminate.
 43
 Grade is E
+
 55
 Grade is D
+
 5
 Grade is F
+
 96
 Grade is A+
+
 82
 Grade is B+
+
 -1
 
 "

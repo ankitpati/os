@@ -7,11 +7,11 @@
 echo "Enter a string:"
 read str
 
-for i in $( seq 1 ${#str} )
+for i in `seq \`echo -n "$str" | wc -c\``
 do
-    C="`echo $str | cut -c $i`"
-    c="`echo $C | tr A-Z a-z`"
-    if [ $c = "a" -o $c = "e" -o $c = "i" -o $c = "o" -o $c = "u" ]
+    C="`echo "$str" | cut -c "$i"`"
+    c="`echo "$C" | tr A-Z a-z`"
+    if [ "$c" = "a" -o "$c" = "e" -o "$c" = "i" -o "$c" = "o" -o "$c" = "u" ]
     then
         echo "$C is a vowel."
     else

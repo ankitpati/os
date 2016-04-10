@@ -67,7 +67,8 @@ double lru(size_t n_frame, size_t *pages, size_t n_page)
 
     LINE();
 
-    printf("Cache Hits = %zu\nHit Ratio  = %.2lf%%\n", hit, 100.0 * hit / n_page);
+    printf("Cache Hits = %zu\nHit Ratio  = %.2lf%%\n",
+                                                    hit, 100.0 * hit / n_page);
 
     return 100.0 * hit / n_page;
 #undef LINE

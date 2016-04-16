@@ -7,28 +7,28 @@
 echo "Enter 3 numbers:"
 read a b c
 
-l=$a
+l="$a"
 
-if [ $b -gt $l ]
+if [ "$b" -gt "$l" ]
 then
-    l=$b
+    l="$b"
 fi
 
-if [ $c -gt $l ]
+if [ "$c" -gt "$l" ]
 then
-    l=$c
+    l="$c"
 fi
 
-s=$a
+s="$a"
 
-if [ $b -lt $s ]
+if [ "$b" -lt "$s" ]
 then
-    s=$b
+    s="$b"
 fi
 
-if [ $c -lt $s ]
+if [ "$c" -lt "$s" ]
 then
-    s=$c
+    s="$c"
 fi
 
 echo "Largest  of $a, $b, $c is $l."

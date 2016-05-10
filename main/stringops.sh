@@ -12,6 +12,7 @@ read str1
 read str2
 echo
 
+ch="y"
 while [ "$ch" != "n" ]
 do
     clear
@@ -53,65 +54,65 @@ do
         ;;
 
     "4")
-        hlen="`echo -n "$str1" | wc -c`"
-        nlen="`echo -n "$str2" | wc -c`"
+        hlen=`echo -n "$str1" | wc -c`
+        nlen=`echo -n "$str2" | wc -c`
 
-        if [ "$nlen" = "0" -o "$hlen" -lt "$nlen" ]
+        if [ $nlen = 0 -o $hlen -lt $nlen ]
         then
             echo "'$str2' not found in '$str1'."
         else
-            for pos in `seq \`expr "$hlen" - "$nlen" + 1\``
+            for pos in `seq \`expr $hlen - $nlen + 1\``
             do
-                for i in `seq "$nlen"`
+                for i in `seq $nlen`
                 do
-                    c="`echo -n $str1 | cut -c \`expr "$pos" + "$i" - 1\``"
-                    d="`echo -n $str2 | cut -c "$i"`"
-                    if [ "$c" != "$d" ]
+                    c=`echo -n "$str1" | cut -c \`expr $pos + $i - 1\``
+                    d=`echo -n "$str2" | cut -c $i`
+                    if [ $c != $d ]
                     then
                         break
                     fi
                 done
 
-                if [ "$c" = "$d" ]
+                if [ $c = $d ]
                 then
                     echo "'$str2' occurs in '$str1' at position $pos."
                     break
                 fi
             done
 
-            if [ "$c" != "$d" ]
+            if [ $c != $d ]
             then
                 echo "'$str2' not found in '$str1'."
             fi
         fi
 
-        hlen="`echo -n "$str2" | wc -c`"
-        nlen="`echo -n "$str1" | wc -c`"
+        hlen=`echo -n "$str2" | wc -c`
+        nlen=`echo -n "$str1" | wc -c`
 
-        if [ "$nlen" = "0" -o "$hlen" -lt "$nlen" ]
+        if [ $nlen = 0 -o $hlen -lt $nlen ]
         then
             echo "'$str1' not found in '$str2'."
         else
-            for pos in `seq \`expr "$hlen" - "$nlen" + 1\``
+            for pos in `seq \`expr $hlen - $nlen + 1\``
             do
-                for i in `seq "$nlen"`
+                for i in `seq $nlen`
                 do
-                    c="`echo -n $str2 | cut -c \`expr "$pos" + "$i" - 1\``"
-                    d="`echo -n $str1 | cut -c "$i"`"
-                    if [ "$c" != "$d" ]
+                    c=`echo -n "$str2" | cut -c \`expr $pos + $i - 1\``
+                    d=`echo -n "$str1" | cut -c $i`
+                    if [ $c != $d ]
                     then
                         break
                     fi
                 done
 
-                if [ "$c" = "$d" ]
+                if [ $c = $d ]
                 then
                     echo "'$str1' occurs in '$str2' at position $pos."
                     break
                 fi
             done
 
-            if [ "$c" != "$d" ]
+            if [ $c != $d ]
             then
                 echo "'$str1' not found in '$str2'."
             fi
@@ -120,20 +121,20 @@ do
 
     "5")
         echo -n "Reversed '$str1': "
-        l="`echo -n "$str1" | wc -c`"
-        while [ "$l" != "0" ]
+        l=`echo -n "$str1" | wc -c`
+        while [ $l != 0 ]
         do
-            echo -n "`echo -n $str1 | cut -c $l`"
-            l="`expr "$l" - 1`"
+            echo -n "`echo -n "$str1" | cut -c $l`"
+            l=`expr "$l" - 1`
         done
         echo
 
         echo -n "Reversed '$str2': "
-        l="`echo -n "$str2" | wc -c`"
-        while [ "$l" != "0" ]
+        l=`echo -n "$str2" | wc -c`
+        while [ $l != 0 ]
         do
-            echo -n "`echo -n $str2 | cut -c $l`"
-            l="`expr "$l" - 1`"
+            echo -n "`echo -n "$str2" | cut -c $l`"
+            l=`expr $l - 1`
         done
         echo
         ;;

@@ -8,10 +8,10 @@ echo "Table of which number?"
 read num
 
 i=1
-while [ "$i" -le "10" ]
+while [ $i -le 10 ]
 do
-    printf "%3d x %3d = %3d\n" "$num" "$i" "`expr $num \* $i`"
-    i="`expr $i + 1`"
+    printf "%3d x %3d = %3d\n" $num $i `expr $num \* $i`
+    i=`expr $i + 1`
 done
 
 # end of table.sh

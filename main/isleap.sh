@@ -7,13 +7,13 @@
 echo "Enter a year:"
 read y
 
-if [ "`expr $y % 400`" -eq "0" ]
+if [ `expr $y % 400` -eq 0 ]
 then
     echo "$y is a leap year."
-elif [ "`expr $y % 100`" -eq "0" ]
+elif [ `expr $y % 100` -eq 0 ]
 then
     echo "$y is a not leap year."
-elif [ "`expr $y % 4`" -eq "0" ]
+elif [ `expr $y % 4` -eq 0 ]
 then
     echo "$y is a leap year."
 else

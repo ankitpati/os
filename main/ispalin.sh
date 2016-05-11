@@ -7,18 +7,18 @@
 echo "Enter a string:"
 read str
 
-l="`echo -n "$str" | wc -c`"
+l=`echo -n "$str" | wc -c`
 
-for i in `seq \`expr "$l" / 2\``
+for i in `seq \`expr $l / 2\``
 do
-    c="`echo -n $str | cut -c $i`"
-    d="`echo -n $str | cut -c $l`"
-    if [ "$c" != "$d" ]
+    c=`echo -n $str | cut -c $i`
+    d=`echo -n $str | cut -c $l`
+    if [ $c != $d ]
     then
         echo "Not Palindrome"
         exit
     else
-        l="`expr "$l" - 1`"
+        l=`expr $l - 1`
     fi
 done
 

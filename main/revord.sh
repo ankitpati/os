@@ -7,10 +7,10 @@
 echo "Number to generate reverse list?"
 read num
 
-while [ "$num" -ne "0" ]
+while [ $num -ne 0 ]
 do
-    printf "%d " "$num"
-    num="`expr $num - 1`"
+    printf "%d " $num
+    num=`expr $num - 1`
 done
 
 echo

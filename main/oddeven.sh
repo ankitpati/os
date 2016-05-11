@@ -7,7 +7,7 @@
 echo "Enter a +ve number:"
 read num
 
-if [ "`expr $num % 2`" -eq "0" ]
+if [ `expr $num % 2` -eq 0 ]
 then
     echo "$num is even."
 else

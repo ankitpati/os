@@ -6,35 +6,35 @@
 
 echo "Marks out of 100? (-1) to terminate."
 
-marks="0"
+marks=0
 
-while [ "$marks" -gt "-1" ]
+while [ $marks -gt -1 ]
 do
     read marks
 
-    if   [ "$marks" -gt "90" ]
+    if   [ $marks -gt 90 ]
     then
         grade="A+"
-    elif [ "$marks" -gt "80" ]
+    elif [ $marks -gt 80 ]
     then
         grade="B+"
-    elif [ "$marks" -gt "70" ]
+    elif [ $marks -gt 70 ]
     then
         grade="B"
-    elif [ "$marks" -gt "60" ]
+    elif [ $marks -gt 60 ]
     then
         grade="C"
-    elif [ "$marks" -gt "50" ]
+    elif [ $marks -gt 50 ]
     then
         grade="D"
-    elif [ "$marks" -gt "40" ]
+    elif [ $marks -gt 40 ]
     then
         grade="E"
     else
         grade="F"
     fi
 
-    if [ "$marks" -gt "-1" ]
+    if [ $marks -gt -1 ]
     then
         echo "Grade is $grade"
         echo

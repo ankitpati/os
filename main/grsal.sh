@@ -7,10 +7,10 @@
 echo "Enter basic salary:"
 read basic_salary
 
-da="`echo \"scale=2; 40 * $basic_salary / 100\" | bc`"
-hra="`echo \"scale=2; 20 * $basic_salary / 100\" | bc`"
-incentive="`echo \"scale=2; (10 * $hra + 5 * $da) / 100\" | bc`"
-gross="`echo \"scale=2; $da + $hra + $basic_salary + $incentive\" | bc`"
+da=`echo "scale=2; 40 * $basic_salary / 100" | bc`
+hra=`echo "scale=2; 20 * $basic_salary / 100" | bc`
+incentive=`echo "scale=2; (10 * $hra + 5 * $da) / 100" | bc`
+gross=`echo "scale=2; $da + $hra + $basic_salary + $incentive" | bc`
 
 echo
 

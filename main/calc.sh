@@ -48,7 +48,7 @@ do
         ;;
     esac
 
-    echo "`echo "scale=2; $num1 $ch $num2" | bc`"
+    echo `echo "scale=2; $num1 $ch $num2" | bc`
     echo
 
     echo "Do you want to continue? (y / N)"

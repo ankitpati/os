@@ -10,12 +10,12 @@ read n
 x=0
 y=1
 i=0
-while [ "$i" -lt "$n" ]
+while [ $i -lt $n ]
 do
-    printf "%d " "$x"
-    y="`expr $x + $y`"
-    x="`expr $y - $x`"
-    i="`expr $i + 1`"
+    printf "%d " $x
+    y=`expr $x + $y`
+    x=`expr $y - $x`
+    i=`expr $i + 1`
 done
 
 echo

@@ -9,7 +9,7 @@ read str1
 read str2
 
 echo -n "Concatenated string is $str1$str2 with length "
-echo "`echo -n "$str1$str2" | wc -c`"
+echo `echo -n $str1$str2 | wc -c`
 
 # end of concat.sh
 

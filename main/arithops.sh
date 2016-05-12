@@ -20,10 +20,10 @@ echo "$a / $b = `expr $a / $b`"
 echo
 
 echo "Fixed Point Arithmetic"
-echo "$a + $b = `echo \"scale=2; $a + $b\" | bc`"
-echo "$a - $b = `echo \"scale=2; $a - $b\" | bc`"
-echo "$a * $b = `echo \"scale=2; $a * $b\" | bc`"
-echo "$a / $b = `echo \"scale=2; $a / $b\" | bc`"
+echo "$a + $b = `echo "scale=2; $a + $b" | bc`"
+echo "$a - $b = `echo "scale=2; $a - $b" | bc`"
+echo "$a * $b = `echo "scale=2; $a * $b" | bc`"
+echo "$a / $b = `echo "scale=2; $a / $b" | bc`"
 
 # end of arithops.sh
 

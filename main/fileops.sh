@@ -40,7 +40,7 @@ echo
 echo "Enter position range to cut text from:"
 read pos1
 read pos2
-cut -c "$pos1-$pos2" < "$newname"
+cut -c $pos1-$pos2 < "$newname"
 
 # end of fileops.sh
 

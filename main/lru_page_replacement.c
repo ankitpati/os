@@ -12,56 +12,56 @@ double lru(size_t n_frame, size_t *pages, size_t n_page)
 {
     size_t p, f, l, lru, hit, frames[20];
 
-    for(f = 0; f < n_frame; ++f) frames[f] = 0; /* 0 is protected page */
+    for (f = 0; f < n_frame; ++f) frames[f] = 0; /* 0 is protected page */
 
     puts("Page Replacement Algorithm");
     puts("Least Recently Used (LRU)");
 
 #define LINE() \
-    { \
+    do { \
         size_t f; \
         putchar('\n'); \
         putchar('+'); \
         printf("---------+"); \
-        for(f = 0; f < n_frame; ++f) printf("----------+"); \
+        for (f = 0; f < n_frame; ++f) printf("----------+"); \
         putchar('\n'); \
-    }
+    } while (0)
 
     hit = 0;
 
     LINE();
 
     printf("| Request |");
-    for(f = 1; f <= n_frame; ++f) printf(" Frame %2zu |", f);
+    for (f = 1; f <= n_frame; ++f) printf(" Frame %2zu |", f);
 
-    for(p = 0; p < n_page; ++p){
+    for (p = 0; p < n_page; ++p) {
         LINE();
 
-        if(!pages[p]){
+        if (!pages[p]) {
             fprintf(stderr, "lru: Segmentation Fault! Page zero requested.\n");
             return NAN;
         }
 
         printf("| Page %2zu |", pages[p]);
 
-        for(f = 0; f < n_frame && frames[f] != pages[p] && frames[f]; ++f);
-        if(f != n_frame){
-            if(frames[f] == pages[p]) ++hit;
+        for (f = 0; f < n_frame && frames[f] != pages[p] && frames[f]; ++f);
+        if (f != n_frame) {
+            if (frames[f] == pages[p]) ++hit;
             goto print_frames;
         }
 
-        for(f = 0, lru = p - 1; f < n_frame; ++f){
-            for(l = p - 1; pages[l] != frames[f]; --l);
-            if(l < lru) lru = l;
+        for (f = 0, lru = p - 1; f < n_frame; ++f) {
+            for (l = p - 1; pages[l] != frames[f]; --l);
+            if (l < lru) lru = l;
         }
 
-        for(f = 0; f < n_frame; ++f)
-            if(frames[f] == pages[lru])
+        for (f = 0; f < n_frame; ++f)
+            if (frames[f] == pages[lru])
                 break;
 
     print_frames:
         frames[f] = pages[p];
-        for(f = 0; f < n_frame; ++f)
+        for (f = 0; f < n_frame; ++f)
             frames[f] ? printf(" %8zu |", frames[f]) : printf(" %8c |", ' ');
     }
 
@@ -80,16 +80,16 @@ int main()
 
     puts("Number of frames?");
     scanf(" %zu%*c", &n_frame);
-    if(n_frame > 20) n_frame = 20;
+    if (n_frame > 20) n_frame = 20;
     putchar('\n');
 
     puts("Number of pages?");
     scanf(" %zu%*c", &n_page);
-    if(n_page > 20) n_page = 20;
+    if (n_page > 20) n_page = 20;
     putchar('\n');
 
     printf("%zu pages?\n", n_page);
-    for(i = 0; i < n_page; ++i) scanf(" %zu%*c", pages + i);
+    for (i = 0; i < n_page; ++i) scanf(" %zu%*c", pages + i);
     putchar('\n');
 
     lru(n_frame, pages, n_page);
